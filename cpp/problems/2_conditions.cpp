@@ -41,35 +41,38 @@ int main()
 
     if (a > b && a > c)
     {
+        cout << a;
         if (b > c)
         {
-            cout << a << ", " << b << ", " << c;
+            cout << ", " << b << ", " << c;
         }
         else
         {
-            cout << a << ", " << c << ", " << b;
+            cout << ", " << c << ", " << b;
         }
     }
     else if (b > a && b > c)
     {
+        cout << b;
         if (a > c)
         {
-            cout << b << ", " << a << ", " << c;
+            cout << ", " << a << ", " << c;
         }
         else
         {
-            cout << b << ", " << c << ", " << a;
+            cout << ", " << c << ", " << a;
         }
     }
     else
     {
+        cout << c;
         if (a > b)
         {
-            cout << c << ", " << a << ", " << b;
+            cout << ", " << a << ", " << b;
         }
         else
         {
-            cout << c << ", " << b << ", " << a;
+            cout << ", " << b << ", " << a;
         }
     }
 
@@ -81,17 +84,14 @@ int main()
     cout << "Date validation\n";
     cout << "Day: ";
     cin >> day;
-    cin.ignore();
     cout << "Month: ";
     cin >> month;
-    cin.ignore();
     cout << "Year: ";
     cin >> year;
-    cin.ignore();
 
-    if (day < 0 || month < 0 || year < 0)
+    if (day == 0 || month == 0 || year == 0)
     {
-        cout << "The values must be positive";
+        cout << "The values must be greater than 0";
         return 1;
     }
     if (month > 12)
@@ -99,37 +99,27 @@ int main()
         cout << "Invalid month";
         return 1;
     }
-    if (day < 28 || day > 31)
+    if (day > 31)
     {
         cout << "Invalid day\n";
         return 1;
     }
 
-    // jan, mar, may, jul, aug, oct, dec
-    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-    {
-        if (day != 31)
-        {
-            cout << "Invalid day\n";
-            return 1;
-        }
-    }
     // apr, jun, sep, nov
-    else if (month == 4 || month == 6 || month == 9 || month == 11)
+    if (month == 4 || month == 6 || month == 9 || month == 11)
     {
-        if (day != 30)
+        if (day > 30)
         {
             cout << "Invalid day\n";
             return 1;
         }
     }
-    // feb
-    else
+    else if (month == 2)
     {
-        // leap year
-        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+        bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+        if (isLeapYear)
         {
-            if (day != 29)
+            if (day > 29)
             {
                 cout << "Invalid day\n";
                 return 1;
@@ -137,7 +127,7 @@ int main()
         }
         else
         {
-            if (day != 28)
+            if (day > 28)
             {
                 cout << "Invalid day\n";
                 return 1;
