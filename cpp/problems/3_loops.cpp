@@ -23,7 +23,7 @@ int main()
     
     cout << "Lower limit: ";
     cin >> lowerLimit;
-    // Use i as a shorthand for lowerLimit.
+    // Redeclare i with lowerLimit to simplify the for loop
     i = lowerLimit;
     cout << "Upper limit: ";
     cin >> upperLimit;
