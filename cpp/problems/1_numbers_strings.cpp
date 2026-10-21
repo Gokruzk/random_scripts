@@ -24,7 +24,7 @@ int main()
 
     cin.ignore(); // clean buffer
 
-    double area = (base * height) / 2;
+    double area = (base * height);
     double perimeter = pow(base, 2) + pow(height, 2);
 
     cout << "The area is " << area << " and the perimeter is " << perimeter << endl;
