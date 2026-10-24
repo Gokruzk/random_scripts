@@ -7,6 +7,7 @@ int main()
     unsigned int i{1};
     int factorial{1};
 
+    // for (; i <= 5; i ++)
     for (; i <= 5;)
     {
         factorial *= i;
@@ -20,7 +21,7 @@ int main()
     cout << "Even and odd numbers\n";
     unsigned int lowerLimit{0};
     unsigned int upperLimit{0};
-    
+
     cout << "Lower limit: ";
     cin >> lowerLimit;
     // Redeclare i with lowerLimit to simplify the for loop
