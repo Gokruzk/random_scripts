@@ -81,7 +81,7 @@ public:
         }
         else
         {
-            cout << "No tienes una espada equipada." << endl;
+            cout << "No sword equipped" << endl;
             return;
         }
     }
@@ -111,7 +111,7 @@ int main()
 
     cout << "Player 3" << endl;
 
-    Player P3("GK", SS);
+    Player P3("GKz", SS);
     P3.attack();
     P3.equip(DS);
     P3.attack();
