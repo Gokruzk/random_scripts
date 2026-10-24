@@ -5,9 +5,12 @@ using namespace std;
 int main()
 {
     int num1 = 4, num2 = 2;
-    cout << "Potencia:" << pow(num1, num2) << endl; // Potencia
-    cout << "Raíz Cuadrada:" << sqrt(num1) << endl; // Raíz cuadrada
+
+    cout << "Power: " << pow(num1, num2) << endl;  // Power
+    cout << "Square root: " << sqrt(num1) << endl; // Square root
+
     num1 = -4;
-    cout << "Valor absoluto:" << abs(num1) << endl; // Valor absoluto
+    cout << "Absolute value: " << abs(num1) << endl; // Absolute value
+
     return 0;
 }
