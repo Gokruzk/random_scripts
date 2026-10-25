@@ -51,6 +51,9 @@ public:
     }
 };
 
+// The sword attribute is a pointer because it can be nullptr;
+// a player is not required to have a sword equipped.
+// A reference cannot be null and must be initialized when declared.
 class Player
 {
 private:
@@ -58,7 +61,9 @@ private:
     Sword *sword = nullptr;
 
 public:
-    Player(const string &nick_) : nick{nick_} {}
+    Player(const string &nick_) : nick{nick_}
+    {
+    }
     Player(const string &nick_, Sword &sword_) : nick{nick_}, sword{&sword_} {}
 
     void equip(Sword &weapon_)
@@ -94,6 +99,17 @@ int main()
 
     Sword &S1 = SS;
     S1.attack();
+
+    // it doesn't work
+    S1 = DS;
+    S1.attack();
+
+    Sword *S2 = &DS;
+    S2->attack();
+
+    // it works
+    S2 = &SS;
+    S2->attack();
 
     // Dynamic polimorphism
 
