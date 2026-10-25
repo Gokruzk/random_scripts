@@ -92,7 +92,10 @@ int main()
     DrakeSword DS;
     SealSword SS;
 
-    // Dynamic polimorfism
+    Sword &S1 = SS;
+    S1.attack();
+
+    // Dynamic polimorphism
 
     cout << "Player 1" << endl;
     Player P1("gokz");
